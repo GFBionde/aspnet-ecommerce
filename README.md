@@ -13,5 +13,14 @@ By the way, I am using 'Shoppers' template, made by Colorlib. You can get it her
 <br/><a href="https://colorlib.com/wp/template/shoppers/"> (Free) Template source </a>
 
 
-</br><br/>
+</br>
 Feel free to download and modify this project as you wish!
+
+</br><br/>
+<hr/>
+<table>
+  <tr>
+    <td><img src="https://i.imgur.com/wH5dR5S.png"> Homepage </td>
+    <td><img src="https://i.imgur.com/vxLIJsJ.png"> Carrinho de Compras </td>
+  </tr>
+</table>
