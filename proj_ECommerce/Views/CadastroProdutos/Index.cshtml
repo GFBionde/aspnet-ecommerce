@@ -1,0 +1,137 @@
+﻿<!-- View index do Painel de Produtos! -->
+@{
+    ViewData["Title"] = "Controle de Produtos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- O CSS deve ser importado/escrito aqui dentro!-->
+@section styles {
+    <style>
+        #form-cad-produto {
+            width: 50%;
+            margin-left: 20%;
+            display: inline-block;
+        }
+
+        #box-list-categoria {
+            width: 24%;
+            float: right;
+            height: 400px;
+            overflow-x: auto;
+            margin-top: 4.8%;
+            border-radius: 5px;
+            padding-right: 10px;
+            display: inline-block;
+        }
+
+        #box-list-categoria h4 {
+            text-align: center;
+            font-size: 20px;
+            position: sticky;
+            top: 0;
+        }
+
+        #content-box {
+            margin: 0 auto;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+
+        .form-control::placeholder {
+            color: darkred;
+            opacity: 0.60; 
+        }
+
+    </style>
+}
+
+<!-- Os scripts devem ser importados/escritos aqui dentro! -->
+@section scripts {
+    <script src="~/js/Views/CadastroProdutos/Index.js"></script>
+    <script type="text/javascript">
+        window.onload = index.listarCategorias();
+    </script>
+}
+
+<!-- HTML Dinâmico -->
+<!--Id, Nome, Categoria, Preço de Compra e Preço de Venda-->
+
+<div id="content-box">
+    
+    <div id="form-cad-produto">
+
+        <!-- Titulo -->
+        <h4 style="text-align: center">Cadastrar Produtos</h4>
+        <br />
+
+
+        <div class="form-group">
+            <div class="form-row">
+                <!-- ID -->
+                <div class="form-group col-md-6">
+                    <label for="inpID">Cod. Produto</label>
+                    <input type="number" class="form-control" id="inpID" placeholder="1230">
+                </div>
+
+                <!-- Nome -->
+                <div class="form-group col-md-6">
+                    <label for="inpNome">Nome do Produto</label>
+                    <input type="text" class="form-control" id="inpNome" placeholder="Camiseta Preta">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Categoria -->
+        <div class="form-group">
+            <div class="form-row">
+                <label for="inpCategoria">Categoria</label>
+                <input type="text" class="form-control" id="inpCategoria" placeholder="Escolha uma categoria!" disabled />
+                <input type="text" id="idCategoria" style="display: none" />
+            </div>
+        </div>
+
+
+
+        <!-- Preços -->
+        <div class="form-group">
+            <div class="form-row">
+                <!-- Preço de Compra -->
+                <div class="form-group col-md-6">
+                    <label for="inpPCompra">Preço de Compra (R$)</label>
+                    <input type="number" class="form-control" id="inpPCompra" min="0.00" step="any" placeholder="30.00">
+                </div>
+                <!-- Preço de Venda -->
+                <div class="form-group col-md-6">
+                    <label for="inpPVenda">Preço de Venda (R$)</label>
+                    <input type="number" class="form-control" id="inpPVenda" min="0.00" step="any" placeholder="70.00">
+                </div>
+            </div>
+        </div>
+
+        <!-- Url da Imagem / Foto do Produto. -->
+        <div class="form-group">
+            <div class="form-row">
+                <label for="inpUrlImagem">Link da Imagem do Produto</label>
+                <input type="text" class="form-control" id="inpUrlImagem" placeholder="www.site.com/foto-da-imagem" />
+            </div>
+        </div>
+
+
+        <!-- Mensagens de feedback.. -->
+        <div class="form-group">
+            <div id="divMsg" style="display: none; text-align: center;" class="mt-3 alert alert-danger"></div>
+            <input type="button" class="btn btn-primary btn-block" value="Cadastrar Produto" onclick="index.cadastrar()" />
+        </div>
+    </div>
+
+
+    <div id="box-list-categoria">
+        <h4> Categorias de Produtos</h4>
+        <div style="text-align: center"><img src="" id="gifLoading" /></div>
+        <ol id="listCategoria" class="list-group"> </ol>
+    </div>
+</div>
+
+

@@ -1,0 +1,45 @@
+﻿<!-- View index/home/default do e-commerce! -->
+<!-- Razor responsável por linkar essa página ao Template-pai. -->
+@{
+    /*ViewData["Title"] é responsável por setar o título que será substituído no Template..*/
+    ViewData["Title"] = "Index";
+
+    /*Apontando para o Template.*/
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- O CSS deve ser importado/escrito aqui dentro!-->
+@section styles{
+    <style>
+    </style>
+}
+
+<!-- Os scripts devem ser importados/escritos aqui dentro! -->
+@section scripts{
+    <script src="~/js/Views/Default/Index.js"></script>
+    <script type="text/javascript">
+        window.onload = index.listarGrid();
+    </script>
+}
+
+<!-- HTML Dinâmico -->
+<div id="main-content-box">
+    <div class="site-section block-3 site-blocks-2 bg-light">
+        <div class="container">
+            <!-- Exibição de Produtos -->
+            <div class="row justify-content-center">
+                <div class="col-md-7 site-section-heading text-center pt-4">
+                    <h2>Nossos Produtos</h2>
+                </div>
+            </div>
+
+            <!-- Gridview com preview dos Produtos.. -->
+            <div id="box-produtos" class="container">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

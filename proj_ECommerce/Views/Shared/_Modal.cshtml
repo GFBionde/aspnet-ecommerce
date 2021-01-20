@@ -1,0 +1,76 @@
+﻿<!--
+    Este .cshtml é um Template de Modal.
+    O conteúdo deste documento é comum para todas as páginas que a adotarem, exceto..
+    ..Os trechos marcados por Razors (@@), que renderizam o conteúdo dinâmico das páginas-filhas.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- ######### STYLES ######### -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="~/template/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/template/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/template/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/template/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/template/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/template/css/aos.css">
+    <link rel="stylesheet" href="~/template/css/style.css">
+
+    <link rel="stylesheet" href="~/template/plugins/toastr/toastr.min.css"/>
+
+    <!-- Área Dinâmica que irá carregar o CSS/StyleSheet da página. -->
+    @RenderSection("styles", false)
+</head>
+<body>
+
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <!-- #### HEADER #### -->
+                <div class="modal-header">
+                    <h5 class="modal-title"> @ViewData["Title"] </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- #### MAIN #### -->
+                <div class="modal-body">
+                    @RenderBody()
+                </div>
+
+                <!-- #### FOOTER #### -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div
+>
+            </div>
+        </div>
+    </div>
+
+    <!-- ######### SCRIPTS ######### -->
+    <script src="~/template/js/jquery-3.3.1.min.js"></script>
+    <script src="~/template/js/jquery-ui.js"></script>
+    <script src="~/template/js/popper.min.js"></script>
+    <script src="~/template/js/bootstrap.min.js"></script>
+    <script src="~/template/js/owl.carousel.min.js"></script>
+    <script src="~/template/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/template/js/aos.js"></script>
+    <script src="~/template/js/main.js"></script>
+
+    <script src="~/template/plugins/toastr/toastr.min.js"></script>
+    <script src="~/js/HTTPClient.js"></script>
+
+    <!-- Área Dinâmica que receberá os Scripts.. -->
+    @RenderSection("scripts", required: false)
+</body>
+</html>

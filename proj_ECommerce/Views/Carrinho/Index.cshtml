@@ -1,0 +1,141 @@
+﻿<!-- View index do Carrinho de Compras! -->
+@{
+    ViewData["Title"] = "Carrinho";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- O CSS deve ser importado/escrito aqui dentro!-->
+@section styles{
+    <style></style>
+}
+
+
+<!-- Os scripts devem ser importados/escritos aqui dentro! -->
+@section scripts{
+    <script src="~/js/Views/Carrinho/Index.js"></script>
+    <script type="text/javascript">
+        window.onload = index.carregarCarrinho();
+        window.onload = index.calcularTotal();
+    </script>
+}
+
+
+<!-- HTML Dinâmico -->
+<div id="content-box">
+
+    <!-- Localização atual do usuário: Home/Carrinho-->
+    <div class="bg-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-0">
+                    <a href="index.html">Home</a>
+                    <span class="mx-2 mb-0">/</span>
+                    <strong class="text-black">Carrinho</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Carrinho de Produtos. -->
+    <div class="site-section">
+        <div class="container">
+            <div class="row mb-5">
+                <form class="col-md-12" method="post">
+                    <div class="site-blocks-table">
+
+                        <!-- Tabela com os produtos. -->
+                        <table class="table table-bordered">
+                            <!-- Cabeçalho -->
+                            <thead id="head-carrinho">
+                                <tr>
+                                    <th class="product-thumbnail">Imagem</th>
+                                    <th class="product-name">Produto</th>
+                                    <th class="product-price">Preço</th>
+                                    <th class="product-total">Total</th>
+                                    <th class="product-remove">Remover</th>
+                                </tr>
+                            </thead>
+                            <!-- Body da tabela, sendo rows com os produtos. -->
+                            <tbody id="body-carrinho">
+                                <!-- CARRINHO DINAMICO AQUI -->
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ##### -->
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Botão de 'Continuar Comprando' -->
+                    <div class="row mb-5">
+                        <div class="col-md-6">
+                            <button class="btn btn-outline-primary btn-sm btn-block" onclick="window.location.href='/Default'">Continuar Comprando</button>
+                        </div>
+                    </div>
+
+                    <!-- Cupom de Desconto -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-black h4" for="coupon">Cupom</label>
+                            <p>Digite aqui o código do seu cupom, caso tenha um!</p>
+                        </div>
+
+                        <div class="col-md-8 mb-3 mb-md-0">
+                            <input type="text" class="form-control py-3" id="coupon" placeholder="Código do cupom">
+                        </div>
+
+                        <div class="col-md-4">
+                            <button class="btn btn-primary btn-sm" onclick="toastr.info('Não estamos aceitando cupom no momento..')">Aplicar cupom</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proceder para o check-out -->
+                <div class="col-md-6 pl-5">
+                    <div class="row justify-content-end">
+                        <div class="col-md-7">
+
+                            <div class="row">
+                                <div class="col-md-12 text-right border-bottom mb-5">
+                                    <h3 class="text-black h4 text-uppercase">Valor total</h3>
+                                </div>
+                            </div>
+
+                            <!-- Valor sub-total do Carrinho (SEM DESCONTO) -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <span class="text-black">Subtotal</span>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <strong class="text-black" id="cart_subTotal">R$ 00.00</strong>
+                                </div>
+                            </div>
+
+                            <!-- Valor final do Carrinho (COM DESCONTO) -->
+                            <div class="row mb-5">
+                                <div class="col-md-6">
+                                    <span class="text-black">Total</span>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <strong class="text-black" id="cart_total">R$ 00.00</strong>
+                                </div>
+                            </div>
+
+                            <!-- Finalizar compra.. -->
+                            <div class="row">
+                                <div class="col-md-12" onclick="toastr.success('Compra finalizada!')">
+                                    <button class="btn btn-primary btn-lg py-3 btn-block">
+                                        Finalizar Compra
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
