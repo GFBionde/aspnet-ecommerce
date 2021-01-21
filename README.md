@@ -37,6 +37,6 @@ This project includes a page to:
 <table>
   <tr>
     <td><img src="https://i.imgur.com/wH5dR5S.png"> Homepage/Products Gridview </td>
-    <td><img src="https://i.imgur.com/vxLIJsJ.png"> Produts Cart </td>
+    <td><img src="https://i.imgur.com/vxLIJsJ.png"> Products Cart </td>
   </tr>
 </table>
