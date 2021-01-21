@@ -14,6 +14,11 @@ This is a quite simple academic project, so there's no other objective than expl
 By the way, I am using 'Shoppers' template, made by Colorlib. You can get it here: 
 <br/><a href="https://colorlib.com/wp/template/shoppers/"> (Free) Template source </a>
 
+<br/>
+Feel free to download and modify this project as you wish!
+<br/>
+<br/>
+
 
 # What does this project includes?
 
@@ -26,14 +31,12 @@ This project includes a page to:
 <ul>
 
 
-</br>
-Feel free to download and modify this project as you wish!
 
 </br><br/>
 <hr/>
 <table>
   <tr>
-    <td><img src="https://i.imgur.com/wH5dR5S.png"> Homepage </td>
-    <td><img src="https://i.imgur.com/vxLIJsJ.png"> Carrinho de Compras </td>
+    <td><img src="https://i.imgur.com/wH5dR5S.png"> Homepage/Products Gridview </td>
+    <td><img src="https://i.imgur.com/vxLIJsJ.png"> Produts Cart </td>
   </tr>
 </table>
