@@ -23,7 +23,7 @@ namespace proj_ECommerce.DAL
         /* Cria uma conexão com o Banco, e uma variável de comandos SQL. */
         public MySQLPersistence(bool manter = false)
         {
-            _conexao = new MySqlConnection("Server=den1.mysql3.gear.host; Port=3306; Database=bancomysql; Uid=bancomysql; Pwd=@LP4pass;");
+            _conexao = new MySqlConnection("CONNECTION STRING");
             _cmd = _conexao.CreateCommand();
             _manterConexaoAberta = manter;
         }
