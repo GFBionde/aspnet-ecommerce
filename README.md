@@ -2,7 +2,7 @@
 
 This is a quite simple academic project, so there's no other objective than explore the following resources:<br/>
 <ul>
-  <li> MVC ASP .NET Core 3.1. </li>
+  <li> MVC .NET Core 3.1. </li>
   <li> Razors, Templates </li> 
   <li> JavaScript (Vanilla JS)</li>
   <li> AJAX and JSON </li>
